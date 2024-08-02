@@ -3,9 +3,6 @@ import minus from './minus.svg';
 import plus from './plus.svg';
 
 
-
-{/* <CartProduct key= {eachData.id} productNumber={eachData.quantity} productName={eachData.name} productPrice = {eachData.price}/> */}
-
 function CartProduct ({productNumber, productName, productPrice, IMG}){
   return(
     <div className={styles.CartProduct}> 
@@ -41,8 +38,8 @@ function TotalRow ({title, content}) {
 
 
 
-
 export default function Cart({data}) {
+  //運用拿到的商品資料 data 先計算總total
   let totalPrice= 0;
   for (let i = 0; i < data.length; i++) {
     totalPrice += parseInt(data[i].price)
