@@ -29,7 +29,7 @@ npm install
 4.執行網頁
 
 ```
-npm run start
+npm run dev
 ```
 
 5.暫停執行網頁
