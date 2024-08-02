@@ -3,6 +3,9 @@ import minus from './minus.svg';
 import plus from './plus.svg';
 
 
+
+{/* <CartProduct key= {eachData.id} productNumber={eachData.quantity} productName={eachData.name} productPrice = {eachData.price}/> */}
+
 function CartProduct ({productNumber, productName, productPrice}){
   return(
     <div className={styles.CartProduct}> 
@@ -37,12 +40,14 @@ function TotalRow ({title, content}) {
 }
 
 
+
+
 export default function Cart() {
   return(
     <div className={styles.mainCart}>
       <p className={styles.mainCartTitle}>購物籃</p>
-      <CartProduct productNumber='1' productName='破壞補丁牛仔褲' productPrice = '3,999'/>
-      <CartProduct productNumber='2' productName='刷色直筒牛仔褲' productPrice = '1,299'/>
+      {data.map((eachData) => <CartProduct key= {eachData.id} productNumber={eachData.quantity} productName={eachData.name} productPrice = {eachData.price}/>)
+      }
       <TotalRow title='運費' content= '免費'/>
       <TotalRow title='小計' content= '$5,298'/>
     </div>
