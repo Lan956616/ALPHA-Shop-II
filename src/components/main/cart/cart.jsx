@@ -43,13 +43,17 @@ function TotalRow ({title, content}) {
 
 
 export default function Cart({data}) {
+  let totalPrice= 0;
+  for (let i = 0; i < data.length; i++) {
+    totalPrice += parseInt(data[i].price)
+  }
   return(
     <div className={styles.mainCart}>
       <p className={styles.mainCartTitle}>購物籃</p>
       {data.map((eachData) => <CartProduct key= {eachData.id} productNumber={eachData.quantity} productName={eachData.name} productPrice = {eachData.price} IMG={eachData.img}/>)
       }
       <TotalRow title='運費' content= '免費'/>
-      <TotalRow title='小計' content= '$5,298'/>
+      <TotalRow title='小計' content= {totalPrice}/>
     </div>
   )
 }
